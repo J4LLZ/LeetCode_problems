@@ -5,12 +5,12 @@
 
 class Solution:
     def firstBadVersion(self, n):
-        l_min, l_max = 1, n
-        while l_max > l_min:
-            l_mid = l_min + (l_max - l_min)//2
-            print(l_max, l_mid, l_min)
-            if isBadVersion(l_mid):
-                l_max = l_mid
+        p_min, p_max = 1, n      
+        
+        while p_max > p_min:
+            p_mid = p_min + (p_max - p_min)//2            
+            if isBadVersion(p_mid):
+                p_max = p_mid
             else:
-                l_min = l_mid + 1
-        return l_min
+                p_min = p_mid + 1        
+        return p_min
